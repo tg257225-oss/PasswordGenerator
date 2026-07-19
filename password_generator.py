@@ -45,6 +45,8 @@ def generate_passphrase(num_words, separator="-", capitalize=False):
 
     if num_words < 1:
         print("Word count must be at least 1.")
+        return
+
     chosen_words = [random.choice(word_list)for _ in range(num_words)]
     if capitalize:
         chosen_words = [word.capitalize() for word in chosen_words]
@@ -67,3 +69,5 @@ elif choice == "E":
 
     pphrase = generate_passphrase(num_words, separator=sep, capitalize=cap)
     print(f"Your passphrase is: {pphrase}")
+
+input("Press Enter to exit...")
